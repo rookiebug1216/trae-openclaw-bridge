@@ -53,7 +53,7 @@ function isLocalOrPrivate(host) {
 
 /**
  * 解析连接配置。优先级：env > bridge.json > openclaw.json 自动发现 > 默认。
- * 返回 { gatewayUrl, gatewayToken, tlsRejectUnauthorized }。
+ * 返回 { gatewayUrl, gatewayToken, tlsRejectUnauthorized, tlsExplicit }。
  * token 可能为空字符串（本机模式自动发现失败时），由 client.mjs 按需报错。
  */
 export function resolveGatewayConfig() {
@@ -95,12 +95,15 @@ export function resolveGatewayConfig() {
   // 优先级解析
   const gatewayUrl = envUrl || bridgeUrl || discoveredUrl || `${DEFAULT_PROTO}://127.0.0.1:${DEFAULT_PORT}`;
   const gatewayToken = envToken || bridgeToken || discoveredToken || "";
+  // tlsExplicit：tlsRejectUnauthorized 是否来自用户显式配置（bridge 文件），
+  // 而非按地址推断。client.mjs 据此决定内网地址是否允许跳过证书校验。
+  const tlsExplicit = bridgeTls !== undefined;
   const tlsRejectUnauthorized =
     bridgeTls !== undefined ? !!bridgeTls :
     envUrl ? !isLocalOrPrivate(new URL(envUrl).hostname) :
     discoveredTls;
 
-  return { gatewayUrl, gatewayToken, tlsRejectUnauthorized };
+  return { gatewayUrl, gatewayToken, tlsRejectUnauthorized, tlsExplicit };
 }
 
 /** 运行时可读的连接描述（不含 token）。 */

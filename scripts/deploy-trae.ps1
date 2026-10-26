@@ -1,4 +1,4 @@
-# ==============================================================================
+﻿# ==============================================================================
 # deploy-trae.ps1 — 把 Trae 侧 openclaw 插件安装到本机 Trae
 #
 # 一次铺三处：
@@ -112,10 +112,11 @@ Invoke-Step "Register MCP server in mcp.json" {
             $cfg | Add-Member -NotePropertyName "mcpServers" -NotePropertyValue (New-Object psobject) -Force
         }
 
+        # 高危修复 1：不再写入 NODE_TLS_REJECT_UNAUTHORIZED — 该变量是进程级开关，
+        # 会关闭整个 MCP 进程对所有地址的证书校验。改由 mcp/index.mjs 按目标地址决定。
         $entry = [ordered]@{
             command = "node"
             args    = @($McpIndex)
-            env     = [ordered]@{ NODE_TLS_REJECT_UNAUTHORIZED = "0" }
         }
         $cfg.mcpServers | Add-Member -NotePropertyName $PluginName -NotePropertyValue $entry -Force
 

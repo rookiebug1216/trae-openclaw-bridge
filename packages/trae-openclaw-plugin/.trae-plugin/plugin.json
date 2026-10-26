@@ -16,10 +16,7 @@
   "mcpServers": {
     "openclaw": {
       "command": "node",
-      "args": ["${PLUGIN_ROOT}/mcp/index.mjs"],
-      "env": {
-        "NODE_TLS_REJECT_UNAUTHORIZED": "0"
-      }
+      "args": ["${PLUGIN_ROOT}/mcp/index.mjs"]
     }
   },
   "skills": "./skills/",
