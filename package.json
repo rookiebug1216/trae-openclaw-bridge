@@ -1,0 +1,9 @@
+{
+  "name": "trae-openclaw-bridge-root",
+  "private": true,
+  "description": "Trae ⇄ OpenClaw bridge — root package (scripts only). Each sub-package manages its own dependencies independently.",
+  "scripts": {
+    "deploy:openclaw": "powershell -ExecutionPolicy Bypass -File scripts/deploy-openclaw.ps1",
+    "deploy:trae": "powershell -ExecutionPolicy Bypass -File scripts/deploy-trae.ps1"
+  }
+}

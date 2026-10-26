@@ -1,0 +1,21 @@
+{
+  "id": "trae",
+  "name": "Trae",
+  "description": "Trae IDE bridge: captures cron-finished events, exposes event query HTTP routes, and registers the trae_notify agent tool.",
+  "categories": [
+    "integrations"
+  ],
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "tools": [
+      "trae_notify"
+    ]
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "trae",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Trae IDE bridge plugin for OpenClaw: cron-finished event stream, HTTP query routes (/api/trae/health, /api/trae/events), and the trae_notify agent tool.",
+  "license": "MIT",
+  "openclaw": {
+    "extensions": [
+      "./src/index.mjs"
+    ]
+  }
+}

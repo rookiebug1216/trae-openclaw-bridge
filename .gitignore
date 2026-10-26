@@ -1,0 +1,20 @@
+node_modules/
+*.tgz
+data/
+*.log
+
+# 构建产物（发布走 GitHub Releases，不入库）
+dist/
+.screenshots/
+
+# 本机安装残留 / 配置备份
+*.bak
+*.bak.*
+openclaw.json.bak*
+
+# Trae IDE 工作目录（含本机绝对路径与个人环境信息）
+.trae/
+
+# 编辑器 / 系统
+Thumbs.db
+.DS_Store

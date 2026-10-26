@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Background bridge arc -->
+  <path d="M8 48 Q32 20 56 48" fill="none" stroke="#FF6A00" stroke-width="4" stroke-linecap="round"/>
+  <!-- Claw / paw marks (OpenClaw visual) -->
+  <g fill="#FF6A00">
+    <circle cx="22" cy="38" r="4"/>
+    <circle cx="32" cy="34" r="5"/>
+    <circle cx="42" cy="38" r="4"/>
+    <!-- Top nails -->
+    <circle cx="16" cy="28" r="2.5"/>
+    <circle cx="28" cy="22" r="3"/>
+    <circle cx="40" cy="22" r="3"/>
+    <circle cx="52" cy="28" r="2.5"/>
+  </g>
+  <!-- Trae spark accent -->
+  <path d="M48 12 L50 18 L56 20 L50 22 L48 28 L46 22 L40 20 L46 18 Z" fill="#1772F0" opacity="0.9"/>
+</svg>

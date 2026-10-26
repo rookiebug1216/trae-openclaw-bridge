@@ -1,0 +1,11 @@
+{
+  "name": "trae-openclaw-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Trae IDE plugin: MCP server bridging to OpenClaw Gateway — agents, cron jobs, chat completions, and task-completion notifications.",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2"
+  }
+}
